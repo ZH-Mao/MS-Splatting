@@ -351,10 +351,6 @@ class MMSplatModel(Model):
             # check if this channel should use feature embedding for color representation
             channel.use_mlp = (channel.name in self.config.use_mlp_channels)
 
-            # temporary: block MLP implementation
-            if channel.use_mlp:
-                raise NotImplementedError(f"MLP implementation is not yet available.")
-
             # set indices
             channel.fdc_index = next_fdc_index
             channel.frest_index = next_frest_index
